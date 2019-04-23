@@ -115,8 +115,6 @@ public class ThreadContextImpl implements ThreadContextPlus {
 
     @Override
     public TraceEntry startServiceCallEntry(String type, String text, MessageSupplier messageSupplier, TimerName timerName) {
-        // TODO
-        // TODO will this always be a child/remote dependency?
         return createChildTraceEntry(type, text, messageSupplier, timerName);
     }
 
