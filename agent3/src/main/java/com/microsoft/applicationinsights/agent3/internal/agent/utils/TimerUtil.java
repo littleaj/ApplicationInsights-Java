@@ -7,12 +7,6 @@ public class TimerUtil {
     private TimerUtil(){}
 
     public static String getTimerName(TimerName tn) {
-        if (tn == null) {
-            return "null";
-        }
-        if (tn instanceof TimerNameImpl) {
-            return ((TimerNameImpl) tn).name();
-        }
-        return "(unknown - "+tn.getClass()+")";
+        return ((TimerNameImpl) tn).name();
     }
 }

@@ -6,6 +6,7 @@ import com.microsoft.applicationinsights.agent3.internal.agent.utils.dev.DevLogg
 import org.glowroot.engine.bytecode.api.ThreadContextThreadLocal;
 import org.glowroot.engine.bytecode.api.ThreadContextThreadLocal.Holder;
 import org.glowroot.instrumentation.api.MessageSupplier;
+import org.glowroot.instrumentation.api.TimerName;
 
 public class RootTraceEntryImpl extends TrackingTraceEntryImpl {
     private final ThreadContextThreadLocal.Holder tctlHolder;
@@ -13,8 +14,8 @@ public class RootTraceEntryImpl extends TrackingTraceEntryImpl {
     private static final DevLogger out = new DevLogger(RootTraceEntryImpl.class);
 
     public RootTraceEntryImpl(BaseAppInsightsTxBuilder tx, AppInsightsSender sender, MessageSupplier messageSupplier,
-                              Holder tctlHolder) {
-        super(tx, sender, messageSupplier, null);
+                              TimerName timerName, Holder tctlHolder) {
+        super(tx, sender, messageSupplier, timerName);
         this.tctlHolder = tctlHolder;
     }
 

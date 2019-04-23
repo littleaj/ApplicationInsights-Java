@@ -41,7 +41,7 @@ public class ApplicationInsightsAgentImpl implements AgentSPI {
         ThreadContextImpl mainThreadContext = new ThreadContextImpl(transactionBuilder, sender, rootNestingGroupId, rootSuppressionKeyId);
         threadContextHolder.set(mainThreadContext);
 
-        return new RootTraceEntryImpl(transactionBuilder, sender, messageSupplier, threadContextHolder);
+        return new RootTraceEntryImpl(transactionBuilder, sender, messageSupplier, timerName, threadContextHolder);
     }
 
 }

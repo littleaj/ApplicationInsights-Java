@@ -12,8 +12,7 @@ public class TrackingTraceEntryImpl extends TraceEntryImpl {
     private static final DevLogger out = new DevLogger(TrackingTraceEntryImpl.class);
     private final TransactionSender<Telemetry> sender;
 
-    public TrackingTraceEntryImpl(BaseAppInsightsTxBuilder tx, TransactionSender<Telemetry> sender, MessageSupplier messageSupplier,
-                                  /*@Nullable*/ TimerName timerName) {
+    public TrackingTraceEntryImpl(BaseAppInsightsTxBuilder tx, TransactionSender<Telemetry> sender, MessageSupplier messageSupplier, TimerName timerName) {
         super(tx, messageSupplier, timerName);
         this.sender = sender;
     }
